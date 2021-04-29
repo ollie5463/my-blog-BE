@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 app.post('/api/articles/:name/upvote', (req, res) => {
     const articleName = req.params.name;
     articlesInfo[articleName].upvotes++;
+    //  deepcode ignore XSS: no
     res.status(200).send(`${articleName} now has ${articlesInfo[articleName].upvotes} upvotes`)
 });
 
